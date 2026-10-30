@@ -1,0 +1,8 @@
+.cache
+.claude/*
+!.claude/skills/
+.vscode/cmake-kits.json
+build
+buildRel
+dist
+__pycache__
