@@ -557,12 +557,6 @@ public:
               .id = "DestroyedLightStillInSceneLists",
               .section = "Crashes",
               .description = "Crash when a destroyed light, room or portal is still in the scene's light lists",
-              .details = "When a light, interior room, portal or portal node is destroyed, removes it from the "
-                         "shadow scene nodes' light lists and from the room and portal light links, so later light "
-                         "passes and portal walks don't use freed memory. It never waits for the scene's light lock: "
-                         "if that is busy, and always for the active-light lists (which the original emptied in place, "
-                         "hanging the next light pass), the cleanup runs at the start of the next light pass, so until "
-                         "then other code can still see the stale entry as in vanilla.",
               .origin = "Shadow Scene Node Crash Fix by Bottle",
               .runtimes = OpenFixes::Runtime::ALL,
               .skipIfInstalled = { "ShadowSceneNodeCrashFix.dll" },

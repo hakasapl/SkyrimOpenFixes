@@ -105,9 +105,6 @@ public:
               .id = "InstanceGroupCullingRace",
               .section = "Crashes",
               .description = "Crash in tree LOD and grass culling while instance groups are added or removed",
-              .details = "Holds the game's own instance-group lock while tree LOD and grass culling read the group "
-                         "list, so loader threads can't free a group mid-read. The lock is released before the shape "
-                         "is passed on for rendering.",
               .origin = "LOD Refresh Bug Fix by Bottle",
               .runtimes = OpenFixes::Runtime::ALL,
               .skipIfInstalled = { "SkyrimLODFixes.dll" },

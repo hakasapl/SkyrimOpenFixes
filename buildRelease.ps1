@@ -123,11 +123,9 @@ else {
     Write-Warning "PDB '$PluginName.pdb' not found under $BuildDir."
 }
 
-Write-Step "Generating $PluginName.ini and the README fix lists from the fixes' metadata"
+Write-Step "Generating $PluginName.ini from the fixes' metadata"
 & python (Join-Path $RepoRoot "tools\gen_ini.py")
 if ($LASTEXITCODE -ne 0) { throw "INI generation failed." }
-& python (Join-Path $RepoRoot "tools\gen_readme.py")
-if ($LASTEXITCODE -ne 0) { throw "README generation failed." }
 
 if (Test-Path $PackageDir) {
     Copy-Item -Path (Join-Path $PackageDir "*") -Destination $distDir -Recurse -Force

@@ -160,10 +160,6 @@ public:
               .id = "StaleLODAfterTeleport",
               .section = "Graphics",
               .description = "Old distant LOD never unloads after fast travel, a long teleport or a worldspace change",
-              .details = "After a loading screen that moved the player more than uGridsToLoad cells, or into another "
-                         "worldspace drawn by the same terrain LOD manager, runs the engine's own full LOD reset on "
-                         "that manager, so distant terrain and object LOD rebuild for the new position over about a "
-                         "second.",
               .origin = "LOD Refresh Bug Fix by Bottle",
               .runtimes = OpenFixes::Runtime::ALL,
               .skipIfInstalled = {"SkyrimLODFixes.dll"},

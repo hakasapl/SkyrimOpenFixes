@@ -33,7 +33,7 @@ jobs:
                   submodules: recursive
                   fetch-depth: 0
 
-            - name: Check OpenFixes.ini and README are up to date
+            - name: Check OpenFixes.ini is up to date
               run: |
                   python tools/gen_ini.py --check
 

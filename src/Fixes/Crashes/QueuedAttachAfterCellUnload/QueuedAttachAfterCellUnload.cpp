@@ -67,12 +67,6 @@ public:
               .id = "QueuedAttachAfterCellUnload",
               .section = "Crashes",
               .description = "Background-loaded 3D attached to a reference whose cell has already unloaded",
-              .details = "Off by default: right before a background-loaded model is attached, repeats the game's own "
-                         "check that the reference's cell is still loaded, and if the cell unloaded in between, skips "
-                         "the attach the way the game does when its check fails (no 3D, the model is released with "
-                         "its load task). The game makes the same check a few instructions earlier on the same "
-                         "thread, so this only matters if the cell unloads in that window, which the review could not "
-                         "show happens.",
               .origin = "Shadow Scene Node Crash Fix by Bottle",
               .runtimes = OpenFixes::Runtime::ALL,
               .enabledByDefault = false,

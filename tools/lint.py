@@ -143,8 +143,6 @@ def main():
         infos = re.findall(r'\.id\s*=\s*"([^"]+)",\s*\.section\s*=\s*"([^"]+)"', code)
         if registrations != 1 or len(infos) != 1:
             issues.append(f"must hold exactly one fix ({registrations} OPENFIXES_REGISTER, {len(infos)} FixInfo)")
-        if infos and not re.search(r'\.details\s*=\s*"', code):
-            issues.append("FixInfo has no .details (what the fix changes, shown in the README)")
         runtimes = re.search(r"\.runtimes\s*=\s*([^,]+),", code)
         if runtimes and re.search(r"Runtime::(VR|ALL)\b", runtimes.group(1)):
             if any(n != 4 for n in select_arg_counts(code)):

@@ -26,9 +26,6 @@ public:
               .id = "MapLODLeakOnWorldChange",
               .section = "Crashes",
               .description = "Previous worldspace's world-map LOD stays loaded after changing worldspace (memory leak)",
-              .details = "When the game switches to another worldspace's terrain LOD manager, it now releases the old "
-                         "manager's world-map LOD along with the rest of its LOD (the engine's own full teardown) "
-                         "instead of keeping it in memory.",
               .origin = "LOD Refresh Bug Fix by Bottle",
               .runtimes = OpenFixes::Runtime::ALL,
               .skipIfInstalled = {"SkyrimLODFixes.dll"},

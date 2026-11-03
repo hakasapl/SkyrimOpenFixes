@@ -86,7 +86,6 @@ struct FixInfo {
     std::string_view id;          /**< INI key, PascalCase and unique, e.g. "AIPathingFreeze" */
     std::string_view section;     /**< INI section, one of the sections in package/OpenFixes.ini */
     std::string_view description; /**< One line describing the bug that is fixed */
-    std::string_view details;     /**< One or two sentences on what the fix changes in the game, for the README */
     std::string_view origin;      /**< Mod the fix comes from and its authors, e.g. "AI Pathing Freeze Fix by cashboxs" */
     Runtime runtimes = Runtime::FLAT; /**< Runtimes the fix was checked on; VR must be listed explicitly */
     bool enabledByDefault = true;

@@ -52,7 +52,6 @@ def collect():
             missing = [k for k, v in info.items() if not v]
             if missing:
                 sys.exit(f"{path}: FixInfo is missing literal field(s): {', '.join(missing)}")
-            info["details"] = literal(block, "details") or ""
             if info["section"] not in SECTIONS:
                 sys.exit(f"{path}: unknown section {info['section']!r}; use one of {SECTIONS}")
             info["default"] = "false" if re.search(r"\.enabledByDefault\s*=\s*false", block) else "true"
@@ -62,7 +61,6 @@ def collect():
             # Fixes on every runtime carry no tag; the others list the versions they exist for
             info["runtimes"] = [] if covered >= set(RUNTIME_LABELS) else [
                 label for key, label in RUNTIME_LABELS.items() if key in covered]
-            info["path"] = path.relative_to(ROOT).as_posix()
             fixes.append(info)
     ids = [f["id"] for f in fixes]
     dupes = {i for i in ids if ids.count(i) > 1}

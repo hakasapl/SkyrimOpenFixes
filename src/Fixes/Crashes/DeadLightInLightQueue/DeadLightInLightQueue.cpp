@@ -127,12 +127,6 @@ public:
               .id = "DeadLightInLightQueue",
               .section = "Crashes",
               .description = "Crash when the light-queue pass evaluates a destroyed light or one without an NiLight",
-              .details = "Before the shadow scene node evaluates a queued, dirty or active light, skips it if it was "
-                         "already destroyed (no light virtual table or no references left; it is taken out of that "
-                         "scene node's lists without releasing it) or has no NiLight. Unlike the original it removes "
-                         "such a light from the active lists instead of leaving an empty entry there, which would hang "
-                         "the next light pass; a destroyed light whose memory already holds a new, referenced light "
-                         "can't be told apart, as in vanilla.",
               .origin = "Shadow Scene Node Crash Fix by Bottle",
               .runtimes = OpenFixes::Runtime::ALL,
               .skipIfInstalled = { "ShadowSceneNodeCrashFix.dll" },
