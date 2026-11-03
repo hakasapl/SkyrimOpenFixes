@@ -78,5 +78,6 @@ This project allows AI usage and uses AI for the following use cases (alongside 
 * Code Review (Each PR requires at least 1 human reviewer as well)
 * Searching for potentially in-scope mods on Nexus via the Nexus API
 * Coding assistance
+* Reverse-Engineering
 
 Ultimately, the guideline is that you are responsible for any code AI generates. This means you should understand it fully before opening a pull request to contribute to this project.
