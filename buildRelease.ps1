@@ -137,8 +137,11 @@ New-Item -ItemType Directory -Path $licenseDir -Force | Out-Null
 foreach ($file in @("LICENSE", "EXCEPTIONS.md", "README.md")) {
     Copy-Item -Path (Join-Path $RepoRoot $file) -Destination $licenseDir -Force
 }
-# Each fix keeps its original mod's license files in its folder under src/Fixes; ship them as licenses/<FixId>/
-Get-ChildItem -Path (Join-Path $RepoRoot "src\Fixes") -Recurse -File |
+# Each fix keeps its original mod's license files in its folder, src/Fixes/<Category>/<FixId>; ship them as
+# licenses/<FixId>/ (the category READMEs above the fix folders stay out)
+Get-ChildItem -Path (Join-Path $RepoRoot "src\Fixes") -Directory |
+    Get-ChildItem -Directory |
+    Get-ChildItem -File |
     Where-Object { $_.Extension -notin @(".cpp", ".h") } |
     ForEach-Object {
         $target = Join-Path $licenseDir "licenses\$($_.Directory.Name)"
