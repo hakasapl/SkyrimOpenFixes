@@ -15,6 +15,7 @@
 * Fixes cannot have settings. All fixes will have just one single on/off toggle.
 * Any fixes contributed must either inherit the project's `GPL-3.0` license or supply their own license that is compatible with `GPL-3.0`.
     * Should there be a case where an author allows their module to be included in OpenFixes but either has no license or a license that is not compatible with `GPL-3.0`, the author must provide a license grant and license their code under a `GPL-3.0` compatible license within this repository. See the `License Grant Template` section below. The license grant must apply to everyone, be irrevocable, and come from every copyright holder.
+    * Code contributed under the project's `GPL-3.0` license is also contributed under the additional permissions and terms in [EXCEPTIONS.md](EXCEPTIONS.md), including the section 7 terms on the OpenFixes name and origin.
 * Each fix should be placed under their relevant category folder (for example `src/Fixes/Crashes/<Fix Name>`). Each fix should have at most one `.cpp` source file and one `.h` header file for their fix, along with any required license files.
 * Each fix should be only one fix. This may result in single mods being split across multiple modules at times.
 * Never allocate trampoline in a module, this is done automatically. Use the `Hooks.h` helpers instead for all code that goes through the game.
